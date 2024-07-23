@@ -1,0 +1,20 @@
+DAY-7 SHELL SCRIPT PROJECT
+Create an IAM user to get aws cli.
+1. sudo apt update
+2. sudo apt install snapd
+3. sudo snap install aws-cli --classic
+4. aws --version
+5. aws configure ( give access key and secret access key)
+6. vim aws-resorce.sh
+set -x
+7. aws s3 ls
+8. aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
+aws ec2 describe-instances | jq '.Reservations[].Instances | { InstanceId: .InstanceId, ImageId: .ImageId}'
+9. aws lambda
+10. aws iam list-users
+11. chmod 777 aws-resoyrce.sh
+touch crnlog
+12. crontab -e
+55 01 23 07 02 /home/ubuntu/aws-resource.sh >> /home/ubuntu/crnlog
+13. crontab -l
+we can check our logs using # grep CRON /var/log/sys.log 
